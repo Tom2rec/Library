@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+        <div id="contnet">
+
+            <h1 class="headers">TITLE</h1>
+            <p>I'm <u>Tom</u> and I don't care about anything</p>
+
+        <h5>To do lists</h5>
+        <ol>
+            <li>Create a website</li>
+            <li>Use django</li>
+            <li>abracadabra</li>
+        </ol>
+        <form action="index.html" method="post">
+            <label class="labels" for="name">Username: </label>
+            <input type="text" id="name" name="name">
+            <br>
+            <label class="labels" for="password">Password: </label>
+            <input type="password" id="password" name="password">
+            <br><br>
+            <input class="btn" type="submit" value="SEND TYPIE">
+            <input class="btn" type="reset" value="RESET">
+        </form>
+        <blockquote>
+            Once i was a boy.
+        </blockquote>
+        <code>
+            int a = 12;
+        </code>
+        <br>
+        <a href="../../../../../PycharmProjects/library/books/templates/second.html">Next page</a>
+        <footer>foot</footer>
+    </div>
+{% endblock content %}
