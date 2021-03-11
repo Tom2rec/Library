@@ -16,11 +16,17 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
-from books.views import books_list, book_details, index
+from django.urls import path, include
+from books.views import book_details, index, user_signup, profile_view, BookList, AuthorDetails, AuthorList
 urlpatterns = [
-    path('',index),
+    path('', index, name="index"),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/registration/', user_signup),
+    path('accounts/profile/', profile_view, name="user_profile"),
     path('admin/', admin.site.urls),
-    path('books/',books_list),
-    path('books/<int:book_id>',book_details, name="book_details") #gdy w GET po slash int następuje przypisanie do zmiennej book_id
+    path('books/', BookList.as_view(), name="book_list"),
+    path('authors/', AuthorList.as_view(), name="author_list"),
+    path("authors/<int:author_id>", AuthorDetails.as_view(), name="author_details"),
+    path('books/<int:book_id>', book_details, name="book_details") #gdy w GET po slash int następuje przypisanie do zmiennej book_id
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

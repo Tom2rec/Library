@@ -1,0 +1,12 @@
+<div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+    <div class="card" style="width: 16rem; margin: 1rem;">
+        {% if author.photo %}
+            <img src="{{ author.photo.url }}" class="card-img-top" alt="photo">
+        {% endif %}
+        <div class="card-body">
+            <h5 class="card-title">{{ author.first_name }} {{ author.last_name }}</h5>
+            <p class="card-text">{{ author.about }}</p>
+            <a href="{% url 'author_details' author.id %}" class="btn btn-success">More...</a>
+        </div>
+    </div>
+</div>

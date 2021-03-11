@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<h3><i class="fas fa-user"></i>{{ author.first_name }} {{ author.last_name }}</h3>
+
+{% if author.photo %}
+<img class="cover" src="{{ author.picture.url }}" alt="photo">
+{% else %}
+<p>No photo</p>
+{% endif %}
+<p>
+    {{ author.about }}
+</p>
+
+{% endblock content %}

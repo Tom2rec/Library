@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3 style="padding: 1em" class="text-monospace text-center"><i class="fas fa-user"></i> Authors List</h3>
+
+    <div class="row">
+        {% for author in author_list %}
+            {% include 'components/author_tile.html' %}
+        {% endfor %}
+    </div>
+{% endblock content %}

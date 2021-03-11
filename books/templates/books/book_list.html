@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<h3 style="padding: 1em" class="text-monospace text-center">Books List</h3>
+
+<div class="row">
+    {% for book in book_list %}
+        {% include "components/book_tile.html" %}
+    {% endfor %}
+</div>
+{% endblock content %}
